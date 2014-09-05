@@ -1,14 +1,14 @@
 === BP show activity liked avatars ===
 
-Contributors: Mahdi Amani
+Contributors: mahdiar, paaz
 
 Donate link: http://hami.paaz.ir
 
-Tags: Buddypress,paaz
+Tags: Buddypress,like,avatar
 
 Requires at least: 3.0
 
-Tested up to: 3.9.2
+Tested up to: WordPress 4.0 + BuddyPress 2.0.1
 
 Stable tag: trunk
 
@@ -23,7 +23,7 @@ This plugin allows you to show user avatars below activity who liked that activi
 
 
 
-This plugin allow you to show user avatars below activity who likeds that activity before. you have just need to install it and nothing more to do!
+This plugin allows you to show user avatars below activity who likeds that activity before. you have just need to install it and nothing more to do!
 
 == Installation ==
 
