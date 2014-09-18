@@ -59,6 +59,8 @@ Not yet . Maybe in future.
 
 2. Avatars Bellow Any activity
 
+3. Settings Page
+
 == Upgrade Notice ==
 
 
