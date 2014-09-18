@@ -8,7 +8,7 @@ Tags: Buddypress,like,avatar
 
 Requires at least: 3.0
 
-Tested up to: WordPress 4.0 + BuddyPress 2.0.1
+Tested up to: WordPress 4.0 + BuddyPress 2.0.3
 
 Stable tag: trunk
 
