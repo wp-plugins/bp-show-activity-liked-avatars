@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bp-show-activity-liked-avatars\n"
-"POT-Creation-Date: 2014-09-18 13:53+0330\n"
-"PO-Revision-Date: 2014-09-18 13:53+0330\n"
+"POT-Creation-Date: 2014-11-04 14:20+0330\n"
+"PO-Revision-Date: 2014-11-04 14:20+0330\n"
 "Last-Translator: Mahdiar Amani <mahdiaramani@gmail.com>\n"
 "Language-Team: paaz <info@paaz.ir>\n"
 "Language: en_US\n"
@@ -14,22 +14,31 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../bp-show-activity-liked-avatar.php:93
+#: ../bp-show-activity-liked-avatar.php:142
+#: ../bp-show-activity-liked-avatar3.php:104
 msgid "BSALA Settings"
 msgstr ""
 
-#: ../bp-show-activity-liked-avatar.php:97
+#: ../bp-show-activity-liked-avatar.php:146
+#: ../bp-show-activity-liked-avatar3.php:108
 msgid "Avatar size"
 msgstr ""
 
-#: ../bp-show-activity-liked-avatar.php:101
+#: ../bp-show-activity-liked-avatar.php:150
+#: ../bp-show-activity-liked-avatar3.php:112
 msgid "Fav-box Title"
 msgstr ""
 
-#: ../bp-show-activity-liked-avatar.php:105
+#: ../bp-show-activity-liked-avatar.php:154
+msgid "Number of Avatars"
+msgstr ""
+
+#: ../bp-show-activity-liked-avatar.php:159
+#: ../bp-show-activity-liked-avatar3.php:116
 msgid "Custom Style"
 msgstr ""
 
-#: ../bp-show-activity-liked-avatar.php:111
+#: ../bp-show-activity-liked-avatar.php:165
+#: ../bp-show-activity-liked-avatar3.php:122
 msgid "Save"
 msgstr ""

@@ -8,7 +8,7 @@ Tags: Buddypress,like,avatar
 
 Requires at least: 3.0
 
-Tested up to: WordPress 4.0 + BuddyPress 2.0.1
+Tested up to: WordPress 4.0 + BuddyPress 2.1.1
 
 Stable tag: trunk
 
@@ -23,7 +23,28 @@ This plugin allows you to show user avatars below activity who liked that activi
 
 
 
-This plugin allows you to show user avatars below activity who likeds that activity before. you have just need to install it and nothing more to do!
+This plugin allows you to show user avatars below every activity who likeds that activity before. you have just need to install it and nothing more to do!
+
+<h4>Main Features :</h4>
+
+* It uses Buddypress favorite system.
+* Change the settings in dashboard.
+* You can customise the avatar size.
+* You can set how many avatars to show.
+* You can use your css style.
+* You can change the title for the avatars.
+
+<h4>Languages :</h4>
+
+* English
+* Persian
+* Contact us for adding a new language and make us happy :)
+
+<h4>Roadmap :</h4>
+
+* Adding button for showing all avatars.
+* Adding widget for showing top users(Users have higher likes !)
+* and your nice opinions ! please contact us .
 
 == Installation ==
 
@@ -53,11 +74,21 @@ No, it's useless.
 
 Not yet . Maybe in future.
 
+= Does it show liked avatars for activities before installing this plugin? =
+
+Yes.Becausse it uses buddypress favorites system.
+
+= Can I limit the number of avatars? =
+
+Yes.You can change the limit in the dashboard.
+
 == Screenshots ==
 
 1. Avatars Bellow Any activity
 
 2. Avatars Bellow Any activity
+
+3. Settings Page
 
 == Upgrade Notice ==
 
@@ -68,6 +99,12 @@ Don't use it with bp show activity liked avatars plugin.
 
 
 == Changelog ==
+
+=1.7 =
+
+* Now you can limit the number of avatars
+* avatars showed in list format and title is on top .
+
 =1.5 =
 
 * Now it supports translations
