@@ -60,9 +60,9 @@ More information, the latest updates can be found at
 
 http://paaz.ir/
 
-or contact with me if you have any question
+or contact me if you have any question
 
-http://paaz.ir/
+http://paaz.ir/contactus
 
 == Frequently Asked Questions ==
 
@@ -92,20 +92,21 @@ Yes.You can change the limit in the dashboard.
 
 == Upgrade Notice ==
 
-
-
-= 1.0 =
+<h4>1.0</h4>
 Don't use it with bp show activity liked avatars plugin.
 
 
 == Changelog ==
 
-=1.7 =
+<h4>1.7.1</h4>
+* Plugin settings page now is a submenu of wordpress settings
+
+<h4>1.7</h4>
 
 * Now you can limit the number of avatars
 * avatars showed in list format and title is on top .
 
-=1.5 =
+<h4>1.5</h4>
 
 * Now it supports translations
 * Added Persian translation
@@ -115,7 +116,7 @@ Don't use it with bp show activity liked avatars plugin.
 * You can add style to the fav-box
 * Banner and Icon are added
 
-=1.0 =
+<h4>1.0</h4>
 
 * First Version
 
