@@ -111,7 +111,7 @@ add_filter( 'bp_activity_entry_meta', 'saln_get_users_fav',99 );
 add_action('admin_menu', 'bsala_custom_menu_page');
 
 function bsala_custom_menu_page() {
-   add_menu_page('BSALA', 'BSALA','8', 'bsala_set', 'bsala_settings');
+add_submenu_page( 'options-general.php', 'BSALA', 'BSALA Settings', 'edit_others_posts', 'bsala_set', 'bsala_settings' );
 
 }
 function bsala_settings(){
