@@ -98,6 +98,9 @@ Don't use it with bp show activity liked avatars plugin.
 
 == Changelog ==
 
+<h4>1.7.2</h4>
+* Updating Persian translation
+
 <h4>1.7.1</h4>
 * Plugin settings page now is a submenu of wordpress settings
 
