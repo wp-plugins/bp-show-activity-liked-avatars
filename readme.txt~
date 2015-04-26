@@ -8,7 +8,7 @@ Tags: Buddypress,like,avatar
 
 Requires at least: 3.0
 
-Tested up to: WordPress 4.0 + BuddyPress 2.1.1
+Tested up to: WordPress 4.1 + BuddyPress 2.2
 
 Stable tag: trunk
 
@@ -97,6 +97,8 @@ Don't use it with bp show activity liked avatars plugin.
 
 
 == Changelog ==
+<h4>1.7.3</h4>
+* Worked with bp 2.2 and wp 4.1
 
 <h4>1.7.2</h4>
 * Updating Persian translation

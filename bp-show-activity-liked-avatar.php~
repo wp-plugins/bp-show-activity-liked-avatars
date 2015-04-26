@@ -19,12 +19,10 @@ register_activation_hook( __FILE__,'saln_activate');
 
 register_deactivation_hook( __FILE__,'saln_deactivate');
 
-
 function saln_activate()
 {
 
 }
-
 
 function saln_deactivate()
 {
@@ -33,28 +31,19 @@ function saln_deactivate()
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-
 if(is_plugin_active('buddypress/bp-loader.php'))
 {
 
-function saln_get_users_fav($activity_id='')
-{
 
 
-    $bsala_avatar_size = get_option( "bsala_avatar_size" );
-    $bsala_fav_text = get_option( "bsala_fav_text" );
-    $bsala_style = get_option( "bsala_style" );
-    $bsala_fav_no = get_option( "bsala_fav_no" )+1;
-	echo "
+	function saln_get_users_fav($activity_id='')
+	{
+     
+       		$bsala_avatar_size = get_option( "bsala_avatar_size" );
+		$bsala_fav_text = get_option( "bsala_fav_text" );
+		$bsala_style = get_option( "bsala_style" );
 
-	<style type='text/css'>
-.fav-ul-list  li:nth-child(n+$bsala_fav_no) {display:none;}
-.fav-ul-list  li{
-display:inline;
-}
-	</style>
 
-	";
     $activity_id = bp_get_activity_id();
     global $wpdb;
     $query = "SELECT user_id FROM ".$wpdb->base_prefix."usermeta WHERE meta_key = 'bp_favorite_activities' AND meta_value LIKE '%:\"$activity_id\";%' ";
@@ -66,7 +55,7 @@ display:inline;
 		'field' => 1,
 		'user_id' => $user['user_id']
 	));
-	$avatarurl = bp_core_fetch_avatar( array( 'item_id' => $user['user_id'], 'width' => $bsala_avatar_size, 'height' => $bsala_avatar_size, ‘html’ => false ) );
+			$avatarurl = bp_core_fetch_avatar( array( 'item_id' => $user['user_id'], 'width' => $bsala_avatar_size, 'height' => $bsala_avatar_size, ‘html’ => false ) );
         $link = bp_core_get_user_domain($user['user_id']);
         
 
@@ -78,6 +67,32 @@ display:inline;
         $u_avatars[++$i] = '<li><a class="activity_fav_users" href="'.$link.'"'.">$avatarurl</a></li>";
 
     }
+
+
+		$bsala_fav_no = get_option( "bsala_fav_no" )+1;
+		$bsala_main_fav_no = count($users);
+		
+		if ($bsala_fav_no < $bsala_main_fav_no) {
+	echo "
+
+<a href='#'>more</a>
+	";
+	echo count($users);
+} else {
+	echo "
+
+	<style type='text/css'>
+.fav-ul-list  li:nth-child(n+$bsala_fav_no) {display:none;}
+.fav-ul-list  li{
+display:inline;
+}
+	</style>
+
+	";
+		echo count($users);
+}
+
+
     if(count($u_avatars))
     echo '
 <div class="fav_box" style="'.$bsala_style.'">
@@ -89,6 +104,8 @@ display:inline;
 
     else
     return '';
+    
+ 
   
 }
 }
