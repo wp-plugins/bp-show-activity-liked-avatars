@@ -8,7 +8,7 @@ Tags: Buddypress,like,avatar
 
 Requires at least: 3.0
 
-Tested up to: WordPress 4.2.2 + BuddyPress 2.2.3
+Tested up to: WordPress 4.2.2 + BuddyPress 2.3.2.1
 
 Stable tag: trunk
 
@@ -90,6 +90,9 @@ Yes.You can change the limit in the dashboard.
 
 3. Settings Page
 
+4. Shows number of more likes
+
+
 == Upgrade Notice ==
 
 <h4>1.0</h4>
@@ -97,6 +100,10 @@ Don't use it with bp show activity liked avatars plugin.
 
 
 == Changelog ==
+<h4>1.8</h4>
+* Now it shows number of more likes
+* Fix a bug with bp 2.3
+
 <h4>1.7.3</h4>
 * Worked with bp 2.2 and wp 4.1
 

@@ -2,7 +2,7 @@
 /* Plugin Name: BP Show activity liked avatars
  * Plugin URI: http://paaz.ir
  * Description: This plugin allows you to show user avatars below activity who liked that activity before
- * Version: 1.7.3.1
+ * Version: 1.8
  * Author: Mahdi Amani
  * Author URI: http://paaz.ir
  * Tag: Buddypress, BP Show activity liked avatars
@@ -19,12 +19,10 @@ register_activation_hook( __FILE__,'saln_activate');
 
 register_deactivation_hook( __FILE__,'saln_deactivate');
 
-
 function saln_activate()
 {
 
 }
-
 
 function saln_deactivate()
 {
@@ -33,31 +31,22 @@ function saln_deactivate()
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-
 if(is_plugin_active('buddypress/bp-loader.php'))
 {
 
-function saln_get_users_fav($activity_id='')
-{
 
 
-    $bsala_avatar_size = get_option( "bsala_avatar_size" );
-    $bsala_fav_text = get_option( "bsala_fav_text" );
-    $bsala_style = get_option( "bsala_style" );
-    $bsala_fav_no = get_option( "bsala_fav_no" )+1;
-	echo "
+	function saln_get_users_fav($activity_id='')
+	{
+     
+       		$bsala_avatar_size = get_option( "bsala_avatar_size" );
+		$bsala_fav_text = get_option( "bsala_fav_text" );
+		$bsala_style = get_option( "bsala_style" );
+  		$bsala_more_likes = get_option( "bsala_more_likes" );
 
-	<style type='text/css'>
-.fav-ul-list  li:nth-child(n+$bsala_fav_no) {display:none;}
-.fav-ul-list  li{
-display:inline;
-}
-	</style>
-
-	";
     $activity_id = bp_get_activity_id();
     global $wpdb;
-    $query = "SELECT user_id FROM ".$wpdb->base_prefix."usermeta WHERE meta_key = 'bp_favorite_activities' AND meta_value LIKE '%:\"$activity_id\";%' ";
+    $query = "SELECT user_id FROM ".$wpdb->base_prefix."usermeta WHERE meta_key = 'bp_favorite_activities' AND (meta_value LIKE '%:$activity_id;%' OR meta_value LIKE '%:\"$activity_id\";%') ";
     $users = $wpdb->get_results($query,ARRAY_A);
     foreach ($users as $user)
     {
@@ -66,7 +55,7 @@ display:inline;
 		'field' => 1,
 		'user_id' => $user['user_id']
 	));
-	$avatarurl = bp_core_fetch_avatar( array( 'item_id' => $user['user_id'], 'width' => $bsala_avatar_size, 'height' => $bsala_avatar_size, ‘html’ => false ) );
+			$avatarurl = bp_core_fetch_avatar( array( 'item_id' => $user['user_id'], 'width' => $bsala_avatar_size, 'height' => $bsala_avatar_size, ‘html’ => false ) );
         $link = bp_core_get_user_domain($user['user_id']);
         
 
@@ -78,23 +67,49 @@ display:inline;
         $u_avatars[++$i] = '<li><a class="activity_fav_users" href="'.$link.'"'.">$avatarurl</a></li>";
 
     }
-    if(count($u_avatars))
-    echo '
-<div class="fav_box" style="'.$bsala_style.'">
-    '.$bsala_fav_text.'
-<ul  class="fav-ul-list" >	
- '.implode($u_avatars).'
-</ul>
-    </div>';
 
-    else
-    return '';
-  
+
+		$bsala_fav_no = get_option( "bsala_fav_no" )+1;
+		$bsala_main_fav_no = count($users);
+		$bsala_more_fav_no = $bsala_main_fav_no-$bsala_fav_no+1;
+  		$bsala_more_likes = get_option( "bsala_more_likes" );
+		
+	if (get_option( "bsala_fav_no" ) < $bsala_main_fav_no) {
+	echo "
+	<style type='text/css'>
+.fav-ul-list  li:nth-child(n+$bsala_fav_no) {display:none;}
+.fav-ul-list  li{
+display:inline;
 }
+	</style>
+	";
+    echo '<div class="fav_box" style=".$bsala_style.">'
+    .$bsala_fav_text.
+    '<ul  class="fav-ul-list" >'
+    .implode($u_avatars).
+    ' + '.$bsala_more_fav_no.'   '.$bsala_more_likes.'</ul></div> ';
+
+} else {
+	echo "
+	<style type='text/css'>
+.fav-ul-list  li{
+display:inline;
+}
+	</style>
+	";
+    echo '<div class="fav_box" style=".$bsala_style.">'
+    .$bsala_fav_text.
+    '<ul  class="fav-ul-list" >'
+    .implode($u_avatars).
+    '</ul></div> ';
+
+}
+
+
+   }
 }
 else
 {
-   
     function saln_error_notice()
     {
 
@@ -121,11 +136,13 @@ function bsala_settings(){
 		update_option( "bsala_fav_text", $_POST['bsala_fav_text'] );
 		update_option( "bsala_fav_no", $_POST['bsala_fav_no'] );
 		update_option( "bsala_style", $_POST['bsala_style'] );
+		update_option( "bsala_more_likes", $_POST['bsala_more_likes'] );
 	}
 		$bsala_avatar_size = get_option( "bsala_avatar_size" );
 		$bsala_fav_text = get_option( "bsala_fav_text" );
 		$bsala_style = get_option( "bsala_style" );
   		$bsala_fav_no = get_option( "bsala_fav_no" );
+  		$bsala_more_likes = get_option( "bsala_more_likes" );
 ?>
 <div class="wrap">
 <h1> <?php _e('BSALA Settings', 'bp-show-activity-liked-avatars'); ?></h1>
@@ -147,6 +164,11 @@ function bsala_settings(){
 <tr>
         <th valign="top" scope="row"><?php _e('Custom Style', 'bp-show-activity-liked-avatars');?></th>
     <td><input type="text" name="bsala_style" value="<?php echo $bsala_style ?>" /></td>
+
+</tr>
+<tr>
+        <th valign="top" scope="row"><?php _e('More Likes', 'bp-show-activity-liked-avatars');?></th>
+    <td><input type="text" name="bsala_more_likes" value="<?php echo $bsala_more_likes ?>" /></td>
 
 </tr>
   <tr>
