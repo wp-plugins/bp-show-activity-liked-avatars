@@ -10,7 +10,7 @@ Requires at least: 3.0
 
 Tested up to: WordPress 4.2.2 + BuddyPress 2.3.2.1
 
-Stable tag: trunk
+Stable tag: 1.8
 
 License: GPLv2 or later
 
