@@ -2,7 +2,7 @@
 /* Plugin Name: BP Show activity liked avatars
  * Plugin URI: http://paaz.ir
  * Description: This plugin allows you to show user avatars below activity who liked that activity before
- * Version: 1.8
+ * Version: 1.8.1
  * Author: Mahdi Amani
  * Author URI: http://paaz.ir
  * Tag: Buddypress, BP Show activity liked avatars
@@ -90,6 +90,7 @@ display:inline;
     ' + '.$bsala_more_fav_no.'   '.$bsala_more_likes.'</ul></div> ';
 
 } else {
+if(count($u_avatars)) {
 	echo "
 	<style type='text/css'>
 .fav-ul-list  li{
@@ -102,7 +103,7 @@ display:inline;
     '<ul  class="fav-ul-list" >'
     .implode($u_avatars).
     '</ul></div> ';
-
+}
 }
 
 

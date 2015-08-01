@@ -10,7 +10,7 @@ Requires at least: 3.0
 
 Tested up to: WordPress 4.2.2 + BuddyPress 2.3.2.1
 
-Stable tag: 1.8
+Stable tag: 1.8.1
 
 License: GPLv2 or later
 
@@ -100,6 +100,10 @@ Don't use it with bp show activity liked avatars plugin.
 
 
 == Changelog ==
+<h4>1.8.1</h4>
+* Fix a bug ( PHP error in line 103 )
+* Fix activities without liked avatar
+
 <h4>1.8</h4>
 * Now it shows number of more likes
 * Fix a bug with bp 2.3
