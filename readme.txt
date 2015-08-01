@@ -8,7 +8,7 @@ Tags: Buddypress,like,avatar
 
 Requires at least: 3.0
 
-Tested up to: WordPress 4.2.2 + BuddyPress 2.3.2.1
+Tested up to: 4.2.3
 
 Stable tag: 1.8.1
 
@@ -21,7 +21,7 @@ This plugin allows you to show user avatars below activity who liked that activi
 
 == Description ==
 
-
+* Tested up to BuddyPress 2.3.2.1
 
 This plugin allows you to show user avatars below every activity who likeds that activity before. you have just need to install it and nothing more to do!
 
